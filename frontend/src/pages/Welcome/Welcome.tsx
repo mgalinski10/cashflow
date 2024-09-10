@@ -1,7 +1,6 @@
 import MainWelcomePage from "../../contexts/MainWelcomePage/MainWelcomePage";
-import WelcomeCard from "../../components/WelcomeCart/WelcomeCard";
+import WelcomeCard from "../../components/WelcomeCard/WelcomeCard";
 import WelcomeForm from "../../components/WelcomeForm/WelcomeForm";
-import "./Welcome.scss";
 
 const Welcome: React.FC = () => {
   return (

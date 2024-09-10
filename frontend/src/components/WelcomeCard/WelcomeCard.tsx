@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "./WelcomeCard.scss";
+import styles from "./WelcomeCard.module.scss";
 
 const WelcomeCard: React.FC = () => {
   useEffect(() => {
@@ -9,7 +9,7 @@ const WelcomeCard: React.FC = () => {
       .catch((err) => console.log(err));
   }, []);
   return (
-    <div className="welcome-card-container">
+    <div className={styles.container}>
       <h1>Cashflow </h1>
       <h3>
         Track your income, manage expenses, and maximize your savings

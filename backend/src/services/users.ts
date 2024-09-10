@@ -1,24 +1,21 @@
 import { MongoClient } from "mongodb";
 
-async function main() {
+export async function main() {
   const uri =
     "mongodb+srv://michalg359:23422BOOCt0N2cDy@cashflow.tvkpn.mongodb.net/?retryWrites=true&w=majority&appName=CashFlow";
   const client = new MongoClient(uri);
 
   try {
     await client.connect();
-
-    // await listDataBases(client);
-    // await createUser(client, { name: "michalg359", password: "michal1" });
-    await findUserByName(client, "michalg359");
+    await findUserByName(client, "michal", "123");
   } catch (e) {
     console.error(e);
   } finally {
-    ` await client.close();`;
+    await client.close();
   }
 }
 
-main().catch(console.error);
+// main().catch(console.error);
 
 async function createUser(
   client: MongoClient,
@@ -32,17 +29,21 @@ async function createUser(
   console.log(`New user created with the id ${result.insertedId}`);
 }
 
-async function findUserByName(client: MongoClient, userName: string) {
+export async function findUserByName(
+  client: MongoClient,
+  username: string,
+  password: string
+) {
   const result = await client
     .db("CashFlow")
     .collection("Users")
-    .findOne({ name: userName });
+    .findOne({ name: username, password: password });
 
   if (result) {
-    console.log(`Found a user with name: ${userName}`);
-    console.log(result);
+    console.log(`Found a user with name: ${username}`);
+    return true;
   } else {
-    console.log(`Can't find User with name: ${userName}`);
+    return false;
   }
 }
 

@@ -1,12 +1,12 @@
 import React from "react";
-import "./MainWelcomePage.scss";
+import styles from "./MainWelcomePage.module.scss";
 
 type ParentComponentProps = {
   children: React.ReactNode;
 };
 
 const MainWelcomePage: React.FC<ParentComponentProps> = ({ children }) => {
-  return <div className="welcome-container">{children}</div>;
+  return <div className={styles.container}>{children}</div>;
 };
 
 export default MainWelcomePage;

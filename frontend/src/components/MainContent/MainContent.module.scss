@@ -1,0 +1,34 @@
+.container {
+  width: 55%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 3rem;
+
+  h2 {
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+  }
+
+  div {
+    margin-top: 50px;
+    border: 1px solid rgb(212, 212, 212);
+
+    border-radius: 1cap;
+
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+      border-radius: 2cap;
+      background-color: inherit;
+      height: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 100vw;
+      height: 50px;
+      background-color: rgb(212, 212, 212);
+    }
+  }
+}

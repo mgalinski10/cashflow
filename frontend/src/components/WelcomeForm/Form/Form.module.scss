@@ -52,6 +52,20 @@
         color: whitesmoke;
         transition: all 0.25s ease;
       }
+
+      &:disabled {
+        cursor: default;
+        background-color: lightgrey;
+        color: grey;
+      }
     }
+  }
+
+  .incorrect {
+    color: red;
+  }
+
+  .correct {
+    color: lightgreen;
   }
 }

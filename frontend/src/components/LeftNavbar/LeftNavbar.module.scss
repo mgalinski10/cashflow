@@ -1,0 +1,49 @@
+.container {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  background-color: #006489;
+  color: white;
+
+  div {
+    min-height: 50%;
+
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      font-weight: 1;
+    }
+
+    ul {
+      list-style: none;
+      width: 100%;
+      text-align: center;
+
+      li {
+        padding: 1.2rem;
+        border-bottom: 1px solid #005c7f;
+        font-size: 1rem;
+
+        &:first-child {
+          border-top: 1px solid #005c7f;
+        }
+
+        &:hover {
+          cursor: pointer;
+          background-color: #00506e;
+        }
+      }
+    }
+  }
+
+  button {
+    color: white;
+    background-color: inherit;
+  }
+}

@@ -4,6 +4,8 @@ import styles from "./Form.module.scss";
 const Form: React.FC = () => {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
+  const [correctMessage, setCorrectMessage] = useState(false);
+  const [incorrectMessage, setIncorrectMesage] = useState(false);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -15,9 +17,11 @@ const Form: React.FC = () => {
     });
 
     if (response.ok) {
-      console.log("zalogowano");
+      setIncorrectMesage(false);
+      setCorrectMessage(true);
     } else {
-      console.log("error");
+      setCorrectMessage(false);
+      setIncorrectMesage(true);
     }
   };
 
@@ -48,9 +52,18 @@ const Form: React.FC = () => {
           onChange={handlePassword}
         />
 
-        <button type="submit">Submit</button>
+        <button type="submit" disabled={correctMessage}>
+          Submit
+        </button>
       </form>
-
+      {incorrectMessage && (
+        <p className={styles.incorrect}>
+          Invalid username or password. Please try again
+        </p>
+      )}
+      {correctMessage && (
+        <p className={styles.correct}>Login successful! Redirecting...</p>
+      )}
       <p>Forgot your password? | Create an account</p>
     </div>
   );

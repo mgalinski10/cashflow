@@ -1,4 +1,3 @@
-import { findUserByName } from "./services/users";
 import { Request, Response } from "express";
 
 const express = require("express");
@@ -13,18 +12,13 @@ app.post("/auth", (req: Request, res: Response) => {
   const { username, password } = req.body;
 
   if (username === "michal" && password === "123") {
-    res
-      .status(200)
-      // .json({ status: "success", message: "Login successful" })
-      .redirect("/dashboard");
-
-    console.log("Pomyślnie zalogowano");
+    // HARDCODED for test, need to connect with DB
+    res.status(200).json({ status: "success", message: "Login successful" });
   } else {
     res.status(401).json({
       status: "failed",
       message: "Something went wrong :( try again..",
     });
-    console.log("Nie udało się zalogować");
   }
 });
 

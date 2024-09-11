@@ -1,0 +1,35 @@
+.transactions {
+  max-height: 80vh;
+
+  .header {
+    font-weight: 500;
+    border-top: none;
+    border-bottom: 1px solid rgb(212, 212, 212);
+
+    position: sticky;
+    top: 0;
+
+    overflow: hidden;
+    background-color: white;
+  }
+  li {
+    list-style: none;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-top: 1px solid rgb(212, 212, 212);
+
+    padding: 1.3rem;
+
+    input {
+      width: 20px;
+      height: 20px;
+    }
+
+    p {
+      width: 20%;
+    }
+  }
+}

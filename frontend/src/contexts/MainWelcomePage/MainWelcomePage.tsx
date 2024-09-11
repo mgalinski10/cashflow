@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./MainWelcomePage.module.scss";
 
-type ParentComponentProps = {
+export type ParentComponentProps = {
   children: React.ReactNode;
 };
 

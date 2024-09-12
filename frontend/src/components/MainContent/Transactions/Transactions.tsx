@@ -1,19 +1,15 @@
 import styles from "./Transactions.module.scss";
 
-export const Transactions: React.FC = () => {
-  const transactions = [
-    { id: 1, category: "Food", amount: 20, date: "11.09.2024" },
-    { id: 1, category: "Food", amount: 20, date: "11.09.2024" },
-    { id: 1, category: "Food", amount: 20, date: "11.09.2024" },
-    { id: 1, category: "Food", amount: 20, date: "11.09.2024" },
-    { id: 1, category: "Food", amount: 20, date: "11.09.2024" },
-    { id: 1, category: "Food", amount: 20, date: "11.09.2024" },
-    { id: 1, category: "Food", amount: 20, date: "11.09.2024" },
-    { id: 1, category: "Food", amount: 20, date: "11.09.2024" },
-    { id: 1, category: "Food", amount: 20, date: "11.09.2024" },
-    { id: 1, category: "Food", amount: 20, date: "11.09.2024" },
-  ];
+type TransactionsProps = {
+  transactions: {
+    id: number;
+    category: string;
+    amount: number;
+    date: string;
+  }[];
+};
 
+export const Transactions: React.FC<TransactionsProps> = ({ transactions }) => {
   return (
     <ul className={styles.transactions}>
       <li className={styles.header}>

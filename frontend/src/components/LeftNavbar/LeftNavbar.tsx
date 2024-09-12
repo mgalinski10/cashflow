@@ -1,12 +1,10 @@
 import styles from "./LeftNavbar.module.scss";
 
-const content = [
-  { name: "Transactions" },
-  // { name: "Dashboard" },
-  // { name: "Reports" },
-];
+type NavProps = {
+  content: { name: string }[];
+};
 
-export const LeftNavbar: React.FC = () => {
+export const LeftNavbar: React.FC<NavProps> = ({ content }) => {
   return (
     <div className={styles.container}>
       <div>

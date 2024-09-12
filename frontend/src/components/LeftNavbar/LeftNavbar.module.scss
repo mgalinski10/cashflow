@@ -1,6 +1,4 @@
 .container {
-  width: 20%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -9,14 +7,13 @@
   color: white;
 
   div {
-    min-height: 50%;
-
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
 
     h1 {
+      padding: 3rem;
       font-weight: 1;
     }
 

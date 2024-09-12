@@ -17,7 +17,9 @@ export const PieChartbar: React.FC = () => {
       </div>
       <div className={styles.data}>
         <h4>Expenses by categories</h4>
-        <div className={styles.piechart}>piechart</div>
+        <div className={styles.piechart}>
+          <img src="/img/piechart.jpg" />
+        </div>
         <div>
           <h3>Total Expenses Value</h3>
           <h1>$ 2,583.00</h1>

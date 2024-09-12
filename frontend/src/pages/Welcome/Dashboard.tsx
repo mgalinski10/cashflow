@@ -10,7 +10,7 @@ export const Dashboard: React.FC = () => {
   return (
     <MainDashboard>
       <LeftNavbar content={navContent} />
-      <MainContent header={"Transactions"}>
+      <MainContent>
         <Transactions transactions={transactions} />
       </MainContent>
       <PieChartbar />

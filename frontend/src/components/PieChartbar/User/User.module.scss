@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  margin-top: 1rem;
+
+  .icon {
+    font-size: 1.5rem;
+    color: #0e5183;
+  }
+
+  .user {
+    display: flex;
+    align-items: center;
+
+    div {
+      width: 40px;
+      height: 40px;
+
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    p {
+      margin-left: 0.8rem;
+      font-weight: 600;
+    }
+  }
+}

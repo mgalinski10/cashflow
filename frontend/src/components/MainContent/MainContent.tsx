@@ -3,16 +3,11 @@ import React from "react";
 
 type MainContentProps = {
   children: React.ReactNode;
-  header: string;
 };
 
-export const MainContent: React.FC<MainContentProps> = ({
-  children,
-  header,
-}) => {
+export const MainContent: React.FC<MainContentProps> = ({ children }) => {
   return (
     <div className={styles.container}>
-      <h2>{header}</h2>
       <div>{children}</div>
     </div>
   );

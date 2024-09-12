@@ -3,51 +3,16 @@
   flex-direction: column;
   padding-right: 1rem;
 
-  .options {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    margin-top: 1rem;
-
-    .icon {
-      font-size: 1.5rem;
-    }
-
-    .user {
-      display: flex;
-      align-items: center;
-
-      div {
-        width: 40px;
-        height: 40px;
-
-        border-radius: 50%;
-        overflow: hidden;
-
-        img {
-          max-width: 100%;
-          max-height: 100%;
-          object-fit: cover;
-        }
-      }
-
-      p {
-        margin-left: 0.8rem;
-        font-weight: 600;
-      }
-    }
-  }
-
-  .data {
+  .wrapper {
     margin-top: 40px;
     min-height: 80vh;
+
     border: 1px solid lightgrey;
     border-radius: 1cap;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 
     padding: 1rem;
@@ -63,23 +28,37 @@
       }
     }
 
-    div {
+    section {
       display: flex;
       align-items: center;
       flex-direction: column;
+      justify-content: space-between;
 
-      h3,
-      h1 {
-        margin-bottom: 1rem;
+      min-height: 30%;
+
+      h3 {
+        font-size: 1rem;
+        font-weight: 400;
       }
 
       button {
         font-size: 1rem;
+        font-weight: bold;
+
         padding: 1rem 3rem 1rem 3rem;
+
         border-radius: 1cap;
+        border: 1px solid #006489;
 
         background-color: #006489;
         color: white;
+
+        &:hover {
+          cursor: pointer;
+          color: #006489;
+          background-color: white;
+          transition: all 0.15s ease;
+        }
       }
     }
   }

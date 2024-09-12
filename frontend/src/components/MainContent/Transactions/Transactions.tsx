@@ -22,9 +22,11 @@ export const Transactions: React.FC<TransactionsProps> = ({ transactions }) => {
         return (
           <li>
             <input type="checkbox"></input>
-            <p>{t.date}</p>
+            <p className={styles.date}>{t.date}</p>
             <p>{t.category}</p>
-            <p>$ {t.amount}</p>
+            <p className={t.amount > 0 ? styles.green : styles.red}>
+              $ {t.amount}
+            </p>
           </li>
         );
       })}

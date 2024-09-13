@@ -9,8 +9,10 @@
     position: sticky;
     top: 0;
 
-    overflow: hidden;
-    background-color: #ddf1fe;
+    // overflow: hidden;
+    background-color: white;
+    border-bottom: 1px solid rgb(212, 212, 212);
+    // border-radius: 1cap;
   }
   li {
     list-style: none;
@@ -19,9 +21,15 @@
     justify-content: space-between;
     align-items: center;
 
-    border-top: 1px solid rgb(212, 212, 212);
+    border-bottom: 1px solid rgb(212, 212, 212);
 
     padding: 0.5rem;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #ddf1fe;
+      transition: all 0.5 ease;
+    }
 
     input {
       width: 20px;

@@ -1,6 +1,6 @@
 import styles from "./Transactions.module.scss";
 
-type TransactionsProps = {
+export type TransactionsProps = {
   transactions: {
     id: number;
     category: string;

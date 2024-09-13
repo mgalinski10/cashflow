@@ -13,7 +13,7 @@ export const Dashboard: React.FC = () => {
       <MainContent>
         <Transactions transactions={transactions} />
       </MainContent>
-      <PieChartbar />
+      <PieChartbar transactions={transactions} />
     </MainDashboard>
   );
 };

@@ -1,24 +1,39 @@
 import { useState } from "react";
 import styles from "./Form.module.scss";
+import { useNavigate } from "react-router-dom";
 
 const Form: React.FC = () => {
+  const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [correctMessage, setCorrectMessage] = useState(false);
   const [incorrectMessage, setIncorrectMesage] = useState(false);
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = /* async (event: React.FormEvent<HTMLFormElement>) */ (
+    event: React.FormEvent<HTMLFormElement>
+  ) => {
     event.preventDefault();
 
-    const response = await fetch("http://localhost:5000/auth", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password }),
-    });
+    // const response = await fetch("http://localhost:5000/auth", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({ username, password }),
+    // });
 
-    if (response.ok) {
+    // if (response.ok) {
+    //   setIncorrectMesage(false);
+    //   setCorrectMessage(true);
+    // } else {
+    //   setCorrectMessage(false);
+    //   setIncorrectMesage(true);
+    // }
+
+    /// FOR TEST ONLY NEED TO CONNECT WITH BACKEND
+
+    if (username === "michal") {
       setIncorrectMesage(false);
       setCorrectMessage(true);
+      navigate("/transactions");
     } else {
       setCorrectMessage(false);
       setIncorrectMesage(true);

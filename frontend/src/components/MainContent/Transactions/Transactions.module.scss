@@ -1,18 +1,32 @@
 .transactions {
-  max-height: 90vh;
-  padding-left: 1rem;
+  width: 750px;
+  height: 85vh;
+
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 1cap;
+
+  padding: 1rem;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    border-radius: 2cap;
+    background-color: inherit;
+    height: 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 100vw;
+    height: 50px;
+    background-color: rgb(212, 212, 212);
+  }
 
   .header {
+    background-color: inherit;
     font-weight: 500;
     border-top: none;
-
-    position: sticky;
-    top: 0;
-
-    // overflow: hidden;
-    background-color: white;
-    border-bottom: 1px solid rgb(212, 212, 212);
-    // border-radius: 1cap;
   }
   li {
     list-style: none;
@@ -21,7 +35,7 @@
     justify-content: space-between;
     align-items: center;
 
-    border-bottom: 1px solid rgb(212, 212, 212);
+    border-top: 1px solid rgb(212, 212, 212);
 
     padding: 0.5rem;
 

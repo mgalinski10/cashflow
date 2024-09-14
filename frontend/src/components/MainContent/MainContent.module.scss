@@ -1,25 +1,11 @@
 .container {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
 
-  div {
-    margin-top: 50px;
-
-    border: 1px solid rgb(212, 212, 212);
-    border-radius: 1cap;
-
-    overflow: scroll;
-
-    &::-webkit-scrollbar {
-      border-radius: 2cap;
-      background-color: inherit;
-      height: 0;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      border-radius: 100vw;
-      height: 50px;
-      background-color: rgb(212, 212, 212);
-    }
+  .wrapper {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
   }
 }

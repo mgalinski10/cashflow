@@ -1,4 +1,4 @@
-import MainWelcomePage from "../../contexts/MainWelcomePage/MainWelcomePage";
+import MainWelcomePage from "../../layouts/MainWelcomePage";
 import WelcomeCard from "../../components/WelcomeCard/WelcomeCard";
 import WelcomeForm from "../../components/WelcomeForm/WelcomeForm";
 

@@ -2,10 +2,21 @@ import { useEffect, useRef } from "react";
 import styles from "./Doughnut.module.scss";
 import { Chart } from "chart.js/auto";
 import { ChartConfiguration } from "chart.js/auto";
+import { GroupByCategory } from "../../services/groupByCategory";
+import { TransactionsProps } from "../MainContent/Transactions/Transactions";
+type Transaction = {
+  id: number;
+  category: string;
+  amount: number;
+  date: string;
+};
 
-export const Doughnut: React.FC = () => {
+type Transactions = Transaction[];
+
+export const Doughnut: React.FC<TransactionsProps> = ({ transactions }) => {
   const chartRef = useRef<HTMLCanvasElement | null>(null);
   let chartInstance: Chart<"doughnut", number[], string> | null = null;
+  const data = GroupByCategory(transactions);
 
   useEffect(() => {
     if (chartRef.current) {
@@ -15,11 +26,18 @@ export const Doughnut: React.FC = () => {
         const config: ChartConfiguration<"doughnut", number[], string> = {
           type: "doughnut",
           data: {
-            labels: ["Red", "Blue", "Yellow"],
+            labels: [
+              "Food",
+              "Education",
+              "Clothing",
+              "Health",
+              "Entertainment",
+              "Home",
+            ],
             datasets: [
               {
-                label: "# of Votes",
-                data: [40, 19, 10],
+                label: "# of Category",
+                data: data,
                 // borderWidth: 0,
               },
             ],
@@ -27,19 +45,19 @@ export const Doughnut: React.FC = () => {
           options: {
             plugins: {
               legend: {
-                display: false, // Ukrywa legendę
+                display: false,
               },
               tooltip: {
-                enabled: false, // Wyłącza tooltips
+                enabled: true,
               },
             },
             scales: {
               x: {
                 grid: {
-                  display: false, // Ukrywa siatkę osi X
+                  display: false,
                 },
                 ticks: {
-                  display: false, // Ukrywa etykiety osi X
+                  display: false,
                 },
 
                 border: {
@@ -48,10 +66,10 @@ export const Doughnut: React.FC = () => {
               },
               y: {
                 grid: {
-                  display: false, // Ukrywa siatkę osi Y
+                  display: false,
                 },
                 ticks: {
-                  display: false, // Ukrywa etykiety osi Y
+                  display: false,
                 },
 
                 border: {

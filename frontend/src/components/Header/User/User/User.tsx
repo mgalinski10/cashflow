@@ -5,12 +5,18 @@ import { faGear, faBell } from "@fortawesome/free-solid-svg-icons";
 export const User: React.FC = () => {
   return (
     <div className={styles.container}>
-      <FontAwesomeIcon className={styles.icon} icon={faGear} />
-      <FontAwesomeIcon className={styles.icon} icon={faBell} />
+      <button>
+        <FontAwesomeIcon className={styles.icon} icon={faGear} />
+      </button>
+      <button>
+        <FontAwesomeIcon className={styles.icon} icon={faBell} />
+      </button>
       <div className={styles.user}>
-        <div>
-          <img src="/img/profile.jpg" alt="" />
-        </div>
+        <button>
+          <div>
+            <img src="/img/profile.jpg" alt="" />
+          </div>
+        </button>
         <p>Admin</p>
       </div>
     </div>

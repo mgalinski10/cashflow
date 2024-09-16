@@ -9,6 +9,16 @@
     color: #0e5183;
   }
 
+  button {
+    background-color: inherit;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(0.9);
+      transition: all 0.15s ease;
+    }
+  }
+
   .user {
     display: flex;
     align-items: center;

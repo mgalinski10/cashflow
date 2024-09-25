@@ -4,12 +4,12 @@ import { Doughnut } from "../Doughnut/Dougnut";
 
 import { calcTotalAmount } from "../../services/calcTotalAmount";
 import { TransactionsProps } from "../MainContent/Transactions/Transactions";
-import { GroupByCategory } from "../../services/groupByCategory";
+import { countCategories } from "../../services/countCategories";
 
 import { transactions } from "../../assets/transactions";
 
 export const RightBar: React.FC<TransactionsProps> = ({ transactions }) => {
-  GroupByCategory(transactions);
+  countCategories(transactions);
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>

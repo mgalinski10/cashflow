@@ -2,21 +2,13 @@ import { useEffect, useRef } from "react";
 import styles from "./Doughnut.module.scss";
 import { Chart } from "chart.js/auto";
 import { ChartConfiguration } from "chart.js/auto";
-import { GroupByCategory } from "../../services/groupByCategory";
+import { countCategories } from "../../services/countCategories";
 import { TransactionsProps } from "../MainContent/Transactions/Transactions";
-type Transaction = {
-  id: number;
-  category: string;
-  amount: number;
-  date: string;
-};
-
-type Transactions = Transaction[];
 
 export const Doughnut: React.FC<TransactionsProps> = ({ transactions }) => {
   const chartRef = useRef<HTMLCanvasElement | null>(null);
   let chartInstance: Chart<"doughnut", number[], string> | null = null;
-  const data = GroupByCategory(transactions);
+  const countedCategories = countCategories(transactions);
 
   useEffect(() => {
     if (chartRef.current) {
@@ -37,8 +29,7 @@ export const Doughnut: React.FC<TransactionsProps> = ({ transactions }) => {
             datasets: [
               {
                 label: "# of Category",
-                data: data,
-                // borderWidth: 0,
+                data: countedCategories,
               },
             ],
           },
